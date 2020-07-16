@@ -1,0 +1,6 @@
+summarySCC_PM25 <- readRDS("D:/Anuja RAIT desktop/datasciencecoursera/coursera_exploratorydata_week4/summarySCC_PM25.rds")
+Source_Classification_Code <- readRDS("D:/Anuja RAIT desktop/datasciencecoursera/coursera_exploratorydata_week4/Source_Classification_Code.rds")
+ aggregatetotal<-aggregate(Emissions~year,summarySCC_PM25,sum)
+ png("plot1.png")
+ barplot(height = aggregatetotal$Emissions,names.arg=aggregatetotal$year,xlab="years",ylab=expression('total PM'[2.5]*'emission'),main=expression('Total PM'[2.5]*'emissions at various years'))
+ dev.off()
